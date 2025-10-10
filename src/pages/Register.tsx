@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, use } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Text } from "@/components/retroui/Text";
 import { Button } from "@/components/retroui/Button";
@@ -18,7 +18,7 @@ export default function Register() {
     };
 
     // Set target date: midnight, Oct 11, 2025
-    const targetDate = new Date("2025-10-11T00:00:00");
+    const targetDate = new Date("2025-10-12T00:00:00");
 
     const calculateTimeLeft = () => {
         const now = new Date();

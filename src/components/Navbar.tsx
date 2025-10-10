@@ -1,6 +1,6 @@
 import { useState } from "react"
 // import { Button } from "@/components/retroui/Button"
-import logo from "../assets/logo.png"
+import logo from "../assets/cc_no_bg.png"
 import discordIcon from "@/assets/discord.svg"
 import { useNavigate } from "react-router-dom"
 import { Button } from "./retroui/Button"
@@ -12,13 +12,13 @@ export function Navbar() {
 
   const navItems = [
     // { title: "", href: "#projects" },
-    { title: "Workshops", href: "#workshops" },
-    { title: "FAQ", href: "#faq" },
+    { title: "Workshops", href: "/#workshops" },
+    { title: "FAQ", href: "/#faq" },
     { title: "Contact Us", href: discordInviteLink },
   ]
 
   return (
-    <nav className="w-full md:border-b-4 md:border-black bg-white ">
+    <nav className="w-full md:border-b-4 md:border-black ">
       {/* Main navbar row */}
       <div className="container mx-auto flex items-stretch justify-between px-4 xl:px-0 border-black md:border-b-0 border-b-4">
         {/* Left section - CC Logo */}

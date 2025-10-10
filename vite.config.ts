@@ -18,4 +18,17 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    target: "esnext", // Modern syntax for smaller output
+    minify: "esbuild", // Fastest minifier (default)
+    cssMinify: true,
+    sourcemap: false, // Turn off if you don’t need debugging
+    assetsInlineLimit: 4096, // Inline assets < 4kb
+    reportCompressedSize: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined, // Avoid unnecessary splitting
+      },
+    },
+  },
 })

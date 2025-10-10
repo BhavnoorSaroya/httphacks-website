@@ -7,6 +7,7 @@ import { Avatar } from "@/components/retroui/Avatar";
 import { Calendar } from "lucide-react";
 import { Gift } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Badge } from "@/components/retroui/Badge";
 
 
 export default function App() {
@@ -35,13 +36,13 @@ export default function App() {
       date: "Nov 3",
       title: "Defensive Programming",
       description:
-        "Code like a real developer, build secure, production-grade software and avoid common pitfalls",
+        "Code like a real developer, build secure, production-grade software and avoid common pitfalls.",
     },
         {
       date: "TBA",
       title: "Intro to ReactJS",
       description:
-        "Learn the basics of ReactJS, THE frontend framework, using typescript and other goodies to make our apps faster",
+        "Learn the basics of ReactJS, THE frontend framework, using typescript and other tools that all the cool kids use.",
     },
   ];
 
@@ -73,7 +74,7 @@ export default function App() {
       <Navbar />
 
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center flex-1 text-center p-8 h-32 min-h-screen">
+      <main className="relative flex flex-col items-center justify-center text-center min-h-screen">
         <h1 className="text-7xl md:text-9xl font-bold mb-4">
           <span className="text-primary">HTTP Hacks</span>{" "}
           <span className="text-secondary">2025</span>
@@ -91,6 +92,16 @@ export default function App() {
           <Button size="sm" className="md:px-8 md:py-3 md:text-lg" onClick={() => navigate("/register")}>Register now</Button>
           <Button size="sm" className="md:px-8 md:py-3 md:text-lg" onClick={() => window.open(discordInviteLink, '_blank')} variant="secondary">Questions?&nbsp;<span className="text-muted-foreground">Ask!</span></Button>
         </div>
+
+        {/* Scroll arrow -> jumps to #workshops, was an actual pain */}
+        <a href="#workshops" className="absolute bottom-32 left-1/2 transform -translate-x-1/2" aria-label="Scroll to workshops">
+          <span className="sr-only">Scroll to workshops</span>
+          <div className="scroll-arrow text-muted-foreground hover:text-primary transition-colors" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 animate-bounce">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+        </a>
       </main>
 
       {/* Workshops Section */}
@@ -101,8 +112,7 @@ export default function App() {
             <Card key={i} className="w-full hover:shadow-md transition">
               <Card.Header>
                 <Card.Title className="text-xl font-semibold">
-                  {ws.title}
-                  {ws.title === "Surprise Workshop" ? <Gift /> : ""}
+                  {ws.title === "Surprise Workshop" ? <Gift className="inline mr-1" /> : ""}{ws.title} {/* this gift icon was a pain */}
                 </Card.Title>
                 <Text className="text-sm text-muted-foreground">
                   <Calendar className="inline mr-1 mb-1" size={14} />
@@ -139,10 +149,10 @@ export default function App() {
         <Card className="w-full max-w-[400px] shadow-none hover:shadow-md">
           <Card.Content>
             <Text className="text-lg text-center">
-              &quot;HTTP Hacks is endorsed by me. I think it is awesome
+              &quot;HTTP Hacks is <span className="font-semibold">endorsed by me.</span> I think it is awesome
               and that <span className="font-semibold">everyone should join!</span>&quot;
             </Text>
-            <div className="flex items-center justify-center space-x-2 mt-6">
+            <div className="flex justify-start space-x-2 ">
               <Avatar className="h-10 w-10">
                 <Avatar.Image
                   alt="avatar"
@@ -150,12 +160,14 @@ export default function App() {
                 />
               </Avatar>
               <div>
-                <div className="font-medium">Polina Omelyantseva</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
+                <div className="font-medium justify-start align-center pt-1.5">Polina Omelyantseva</div>
+                {/* <div className="text-sm text-gray-500 dark:text-gray-400">
                   Chair, School of Computing and Academic Studies
-                </div>
+                </div> */}
               </div>
             </div>
+            <br />
+            <Badge variant="surface" className="border-2 border-black"> Chair, School of Computing and Academic Studies </Badge>
           </Card.Content>
         </Card>
 
