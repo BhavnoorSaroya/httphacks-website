@@ -107,3 +107,9 @@
     --destructive-foreground: #fff;
     --border: #2e2e32;
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
+

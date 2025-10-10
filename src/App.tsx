@@ -1,5 +1,3 @@
-"use client";
-
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/retroui/Button";
 import { Card } from "@/components/retroui/Card";
@@ -8,9 +6,12 @@ import { Text } from "@/components/retroui/Text";
 import { Avatar } from "@/components/retroui/Avatar";
 import { Calendar } from "lucide-react";
 import { Gift } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 
 export default function App() {
+  const discordInviteLink = "https://discord.gg/vvf3s2zZYK";
+  let navigate = useNavigate();
   const workshops = [
     {
       date: "TBA",
@@ -36,13 +37,19 @@ export default function App() {
       description:
         "Code like a real developer, build secure, production-grade software and avoid common pitfalls",
     },
+        {
+      date: "TBA",
+      title: "Intro to ReactJS",
+      description:
+        "Learn the basics of ReactJS, THE frontend framework, using typescript and other goodies to make our apps faster",
+    },
   ];
 
   const faqs = [
     {
       question: "Who can participate?",
       answer:
-        "Anyone from BCIT is welcome to join, whether you're a beginner or an experienced hacker. Vibe coders beware, we might ask you a technical question or two.",
+        "Anyone from BCIT is welcome to join, whether you're a beginner or an experienced hacker. <b>Vibe coders beware, we might ask you a technical question or five</b>.",
     },
     {
       question: "Do I need a team?",
@@ -62,11 +69,11 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="bg-background text-foreground flex flex-col">
       <Navbar />
 
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center flex-1 text-center p-8 h-screen">
+      <main className="flex flex-col items-center justify-center flex-1 text-center p-8 h-32 min-h-screen">
         <h1 className="text-7xl md:text-9xl font-bold mb-4">
           <span className="text-primary">HTTP Hacks</span>{" "}
           <span className="text-secondary">2025</span>
@@ -74,22 +81,22 @@ export default function App() {
         <Text className="text-muted-foreground mb-8 max-w-2xl">
           Brought to you by{" "}
           <a
-            href="https://github.com/sponsors/shadcn"
+            href={discordInviteLink}
             className="underline hover:text-primary transition"
           >
             BCIT Computing Club
           </a>
         </Text>
         <div className="flex gap-4">
-          <Button>Register now</Button>
-          <Button variant="secondary">Learn more</Button>
+          <Button size="sm" className="md:px-8 md:py-3 md:text-lg" onClick={() => navigate("/register")}>Register now</Button>
+          <Button size="sm" className="md:px-8 md:py-3 md:text-lg" onClick={() => window.open(discordInviteLink, '_blank')} variant="secondary">Questions?&nbsp;<span className="text-muted-foreground">Ask!</span></Button>
         </div>
       </main>
 
       {/* Workshops Section */}
       <section id="workshops" className="py-16 px-6 md:px-12 bg-muted/30">
         <h2 className="text-4xl font-bold text-center mb-10">Workshops</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {workshops.map((ws, i) => (
             <Card key={i} className="w-full hover:shadow-md transition">
               <Card.Header>
@@ -117,9 +124,9 @@ export default function App() {
           <Accordion type="single" collapsible className="space-y-4 w-full">
             {faqs.map((faq, i) => (
               <Accordion.Item key={i} value={`faq-${i}`}>
-                <Accordion.Header>{faq.question}</Accordion.Header>
+                <Accordion.Header >{faq.question}</Accordion.Header>
                 <Accordion.Content>
-                  <Text className="text-muted-foreground">{faq.answer}</Text>
+                  <Text className="text-muted-foreground"  dangerouslySetInnerHTML={{ __html: faq.answer }} />
                 </Accordion.Content>
               </Accordion.Item>
             ))}
@@ -145,7 +152,7 @@ export default function App() {
               <div>
                 <div className="font-medium">Polina Omelyantseva</div>
                 <div className="text-sm text-gray-500 dark:text-gray-400">
-                  Chair - School of Computing and Academic Studies
+                  Chair, School of Computing and Academic Studies
                 </div>
               </div>
             </div>
@@ -155,7 +162,7 @@ export default function App() {
         <Text className="text-muted-foreground text-center">
           <span className="text-sm">&copy; 2025 BCIT Computing Club</span>
           <br />
-          <span className="text-xs">made with ❤️ by <a href="https://saroya.dev">saroya.dev</a> </span>
+          <span className="text-xs">made with ❤️ by <a className="underline" href="https://saroya.dev">saroya.dev</a> </span>
         </Text>
       </footer>
     </div>
