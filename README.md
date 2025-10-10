@@ -1,11 +1,9 @@
-# React + TypeScript + Vite
+# HTTP hacks website
+Built with React + TypeScript + Vite
+UI is done using https://www.retroui.dev/ and Tailwind css
+The entire project is developed and built using Bunjs runtime
+Please not that the entire site was built in just a few hours, please Open a PR if you see something that needs to be corrected. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## React Compiler
 
