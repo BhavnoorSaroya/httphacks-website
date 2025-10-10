@@ -27,7 +27,7 @@ export default function NotFound() {
     };
 
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-    const [isAnimating, setIsAnimating] = useState(false);
+    const [isAnimating] = useState(false);
 
     // refs for timers so we can clean up
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
