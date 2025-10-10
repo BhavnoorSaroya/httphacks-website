@@ -74,7 +74,7 @@ export default function App() {
       <Navbar />
 
       {/* Hero Section */}
-      <main className="relative flex flex-col items-center justify-center text-center min-h-screen">
+      <main id="hero" className="relative flex flex-col items-center justify-center text-center min-h-screen">
         <h1 className="text-7xl md:text-9xl font-bold mb-4">
           <span className="text-primary">HTTP Hacks</span>{" "}
           <span className="text-secondary">2025</span>

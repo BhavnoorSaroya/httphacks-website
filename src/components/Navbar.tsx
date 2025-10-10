@@ -22,7 +22,7 @@ export function Navbar() {
       {/* Main navbar row */}
       <div className="container mx-auto flex items-stretch justify-between px-4 xl:px-0 border-black md:border-b-0 border-b-4">
         {/* Left section - CC Logo */}
-        <div onClick={() => navigate("/")} className="text-lg md:text-xl xl:text-2xl font-bold p-3 md:p-4 border-x-4 border-black flex items-center">
+        <div onClick={() => navigate("/#hero")} className="text-lg md:text-xl xl:text-2xl font-bold p-3 md:p-4 border-x-4 border-black flex items-center">
           <img src={logo} alt="RetroUI Logo" className="h-10 md:h-10 xl:h-12 w-auto" />
         </div>
 
