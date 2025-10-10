@@ -1,8 +1,8 @@
 # HTTP hacks website
-Built with React + TypeScript + Vite
-UI is done using https://www.retroui.dev/ and Tailwind css
-The entire project is developed and built using Bunjs runtime
-Please not that the entire site was built in just a few hours, please Open a PR if you see something that needs to be corrected. 
+Built with React + TypeScript + Vite.
+UI is done using https://www.retroui.dev/ and Tailwind css.
+The entire project is developed and built using Bunjs runtime.
+Please note that the entire site was built in just a few hours, please Open a PR if you see something that needs to be corrected. 
 
 
 ## React Compiler
