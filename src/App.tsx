@@ -1,0 +1,163 @@
+"use client";
+
+import { Navbar } from "@/components/Navbar";
+import { Button } from "@/components/retroui/Button";
+import { Card } from "@/components/retroui/Card";
+import { Accordion } from "@/components/retroui/Accordion";
+import { Text } from "@/components/retroui/Text";
+import { Avatar } from "@/components/retroui/Avatar";
+import { Calendar } from "lucide-react";
+import { Gift } from "lucide-react";
+
+
+export default function App() {
+  const workshops = [
+    {
+      date: "TBA",
+      title: "Beginners Bootcamp",
+      description:
+        "Learn to design, build, and deploy a project in a couple of hours.",
+    },
+    {
+      date: "Oct 27",
+      title: "Figma & Design",
+      description:
+        "Prototyping 101, why it's important, and how to use Figma to your advantage.",
+    },
+    {
+      date: "Oct 29",
+      title: "Surprise Workshop",
+      description:
+        "A special guest speaker will be joining us to share their insights and expertise.",
+    },
+    {
+      date: "Nov 3",
+      title: "Defensive Programming",
+      description:
+        "Code like a real developer, build secure, production-grade software and avoid common pitfalls",
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "Who can participate?",
+      answer:
+        "Anyone from BCIT is welcome to join, whether you're a beginner or an experienced hacker. Vibe coders beware, we might ask you a technical question or two.",
+    },
+    {
+      question: "Do I need a team?",
+      answer:
+        "Nope! You can join solo and form a team during the event. Registration has to be done individually by each team member.",
+    },
+    {
+      question: "Is it free?",
+      answer:
+        "maybe?",
+    },
+    {
+      question: "What should I bring?",
+      answer:
+        "Bring your laptop, charger, coding skills, and maybe a mechanical keyboard and monitor if you have one. We'll provide snacks and swag!",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <Navbar />
+
+      {/* Hero Section */}
+      <main className="flex flex-col items-center justify-center flex-1 text-center p-8 h-screen">
+        <h1 className="text-7xl md:text-9xl font-bold mb-4">
+          <span className="text-primary">HTTP Hacks</span>{" "}
+          <span className="text-secondary">2025</span>
+        </h1>
+        <Text className="text-muted-foreground mb-8 max-w-2xl">
+          Brought to you by{" "}
+          <a
+            href="https://github.com/sponsors/shadcn"
+            className="underline hover:text-primary transition"
+          >
+            BCIT Computing Club
+          </a>
+        </Text>
+        <div className="flex gap-4">
+          <Button>Register now</Button>
+          <Button variant="secondary">Learn more</Button>
+        </div>
+      </main>
+
+      {/* Workshops Section */}
+      <section id="workshops" className="py-16 px-6 md:px-12 bg-muted/30">
+        <h2 className="text-4xl font-bold text-center mb-10">Workshops</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {workshops.map((ws, i) => (
+            <Card key={i} className="w-full hover:shadow-md transition">
+              <Card.Header>
+                <Card.Title className="text-xl font-semibold">
+                  {ws.title}
+                  {ws.title === "Surprise Workshop" ? <Gift /> : ""}
+                </Card.Title>
+                <Text className="text-sm text-muted-foreground">
+                  <Calendar className="inline mr-1 mb-1" size={14} />
+                  {ws.date}
+                </Text>
+              </Card.Header>
+              <Card.Content>
+                <Text>{ws.description}</Text>
+              </Card.Content>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-16 px-6 md:px-12">
+        <h2 className="text-4xl font-bold text-center mb-10">FAQ</h2>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4 w-full">
+            {faqs.map((faq, i) => (
+              <Accordion.Item key={i} value={`faq-${i}`}>
+                <Accordion.Header>{faq.question}</Accordion.Header>
+                <Accordion.Content>
+                  <Text className="text-muted-foreground">{faq.answer}</Text>
+                </Accordion.Content>
+              </Accordion.Item>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Footer / Testimonial Example */}
+      <footer className="py-10 border-t flex flex-col items-center gap-4">
+        <Card className="w-full max-w-[400px] shadow-none hover:shadow-md">
+          <Card.Content>
+            <Text className="text-lg text-center">
+              &quot;HTTP Hacks is endorsed by me. I think it is awesome
+              and that <span className="font-semibold">everyone should join!</span>&quot;
+            </Text>
+            <div className="flex items-center justify-center space-x-2 mt-6">
+              <Avatar className="h-10 w-10">
+                <Avatar.Image
+                  alt="avatar"
+                  src="https://cdn.discordapp.com/avatars/420989939531120641/b36f8ac1ce60b9c601e79f571b083c50?size=1024"
+                />
+              </Avatar>
+              <div>
+                <div className="font-medium">Polina Omelyantseva</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  Chair - School of Computing and Academic Studies
+                </div>
+              </div>
+            </div>
+          </Card.Content>
+        </Card>
+
+        <Text className="text-muted-foreground text-center">
+          <span className="text-sm">&copy; 2025 BCIT Computing Club</span>
+          <br />
+          <span className="text-xs">made with ❤️ by <a href="https://saroya.dev">saroya.dev</a> </span>
+        </Text>
+      </footer>
+    </div>
+  );
+}
