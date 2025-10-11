@@ -15,12 +15,6 @@ export default function App() {
   let navigate = useNavigate();
   const workshops = [
     {
-      date: "TBA",
-      title: "Beginners Bootcamp",
-      description:
-        "Learn to design, build, and deploy a project in a couple of hours.",
-    },
-    {
       date: "Oct 27",
       title: "Figma & Design",
       description:
@@ -34,15 +28,15 @@ export default function App() {
     },
     {
       date: "Nov 3",
-      title: "Defensive Programming",
-      description:
-        "Code like a real developer, build secure, production-grade software and avoid common pitfalls.",
-    },
-        {
-      date: "TBA",
       title: "Intro to ReactJS",
       description:
         "Learn the basics of ReactJS, THE frontend framework, using typescript and other tools that all the cool kids use.",
+    },
+    {
+      date: "Nov 5",
+      title: "Beginners Bootcamp",
+      description:
+        "Learn to design, build, and deploy a project in a matter of hours.",
     },
   ];
 
@@ -76,7 +70,7 @@ export default function App() {
       {/* Hero Section */}
       <main id="hero" className="relative flex flex-col items-center justify-center text-center min-h-screen">
         <h1 className="text-7xl md:text-9xl font-bold mb-4">
-          <span className="text-primary [text-shadow:4px_4px_0_#000]">HTTP Hacks</span>{" "}
+          <span className="text-primary [text-shadow:4px_4px_0_#3a3a3a]">HTTP Hacks</span>{" "}
           <span className="text-secondary [text-shadow:4px_4px_0_#5F4FE6]">2025</span>
         </h1>
         <Text className="text-muted-foreground mb-8 max-w-2xl">
@@ -107,7 +101,7 @@ export default function App() {
       {/* Workshops Section */}
       <section id="workshops" className="py-16 px-6 md:px-12 bg-muted/30">
         <h2 className="text-4xl font-bold text-center mb-10">Workshops</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {workshops.map((ws, i) => (
             <Card key={i} className="w-full hover:shadow-md transition">
               <Card.Header>
@@ -136,7 +130,7 @@ export default function App() {
               <Accordion.Item key={i} value={`faq-${i}`}>
                 <Accordion.Header >{faq.question}</Accordion.Header>
                 <Accordion.Content>
-                  <Text className="text-muted-foreground"  dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                  <Text className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                 </Accordion.Content>
               </Accordion.Item>
             ))}
