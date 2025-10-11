@@ -11,7 +11,7 @@ import { Badge } from "@/components/retroui/Badge";
 
 
 export default function App() {
-  const discordInviteLink = "https://discord.gg/vvf3s2zZYK";
+  const discordInviteLink = "https://discord.gg/D4qNTvGs6p";
   let navigate = useNavigate();
   const workshops = [
     {

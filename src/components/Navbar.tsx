@@ -8,7 +8,7 @@ import { Button } from "./retroui/Button"
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   let navigate = useNavigate();
-  const discordInviteLink = "https://discord.gg/vvf3s2zZYK";
+  const discordInviteLink = "https://discord.gg/D4qNTvGs6p";
 
   const navItems = [
     // { title: "", href: "#projects" },
