@@ -70,7 +70,7 @@ export default function App() {
       {/* Hero Section */}
       <main id="hero" className="relative flex flex-col items-center justify-center text-center min-h-screen">
         <h1 className="text-7xl md:text-9xl font-bold mb-4">
-          <span className="text-primary [text-shadow:4px_4px_0_#3a3a3a]">HTTP Hacks</span>{" "}
+          <span className="text-primary [text-shadow:4px_4px_0_#3a3a3a] hover:[text-shadow:8px_8px_0_#3a3a3a]">HTTP Hacks</span>{" "}
           <span className="text-secondary [text-shadow:4px_4px_0_#5F4FE6]">2025</span>
         </h1>
         <Text className="text-muted-foreground mb-8 max-w-2xl">

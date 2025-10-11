@@ -59,7 +59,7 @@ export function Navbar() {
 
           {/* Mobile hamburger thing */}
           <button
-            className="md:hidden pl-3  flex items-center justify-center hover:bg-muted transition duration-150"
+            className="md:hidden pl-3  flex items-center justify-center transition duration-150"
             aria-label="Toggle menu"
             onClick={() => setMenuOpen(!menuOpen)}
           >
