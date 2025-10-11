@@ -54,7 +54,7 @@ export default function App() {
     {
       question: "Is it free?",
       answer:
-        "maybe?",
+        "Yes",
     },
     {
       question: "What should I bring?",
