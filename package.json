@@ -23,7 +23,6 @@
     "lucide-react": "^0.545.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-floating-balloons": "^3.0.2",
     "react-router-dom": "^7.9.4",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
