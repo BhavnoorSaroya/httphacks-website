@@ -2,20 +2,20 @@ import { useState, useEffect, useRef } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Text } from "@/components/retroui/Text";
 import { Button } from "@/components/retroui/Button";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 
 export default function Register() {
 
-    const showToast = () => {
-        // console.log("clicked");
-        toast.success(
-            "So are we! 😎",
-            {
-            className: 'no-border-radius',
-            }
-        );
-    };
+    // const showToast = () => {
+    //     // console.log("clicked");
+    //     toast.success(
+    //         "So are we! 😎",
+    //         {
+    //         className: 'no-border-radius',
+    //         }
+    //     );
+    // };
 
     // Set target date: midnight, Oct 11, 2025
     const targetDate = new Date("2025-10-12T00:00:00");
@@ -34,7 +34,7 @@ export default function Register() {
     };
 
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-    const [isAnimating, setIsAnimating] = useState(false);
+    const [isAnimating] = useState(false);
 
     // refs for timers so we can clean up
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -53,17 +53,17 @@ export default function Register() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const handleRefresh = () => {
-        // refresh immediately
-        setTimeLeft(calculateTimeLeft());
+    // const handleRefresh = () => {
+    //     // refresh immediately
+    //     setTimeLeft(calculateTimeLeft());
 
-        // trigger a short animation
-        setIsAnimating(true);
-        if (animTimeoutRef.current) clearTimeout(animTimeoutRef.current);
-        animTimeoutRef.current = setTimeout(() => {
-            setIsAnimating(false);
-        }, 350);
-    };
+    //     // trigger a short animation
+    //     setIsAnimating(true);
+    //     if (animTimeoutRef.current) clearTimeout(animTimeoutRef.current);
+    //     animTimeoutRef.current = setTimeout(() => {
+    //         setIsAnimating(false);
+    //     }, 350);
+    // };
 
     const formatSpelledOut = (t: { hours: number; minutes: number; seconds: number }) =>
         `${t.hours.toString().padStart(2, "0")} hours, ${t.minutes
