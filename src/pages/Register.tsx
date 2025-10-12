@@ -96,7 +96,10 @@ export default function Register() {
                     //   disabled={!timeLeft}
                     className="md:px-10 md:py-4"
                     onClick={() => {
-                        showToast();
+                        // testing
+                        console.log(timeLeft)
+                        const regOpen = (timeLeft?.seconds == 0 && timeLeft?.minutes == 0 && timeLeft?.hours == 0);
+                        regOpen ? window.open("https://docs.google.com/forms/d/e/1FAIpQLSeLrvDak5kSC12zzaB1fSJGxWQ3BTVFL3maNi6YGQiRL_H_mQ/viewform?usp=dialog", "_blank") : showToast();
                         handleRefresh();
                     }}
                 >
