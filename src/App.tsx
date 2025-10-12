@@ -41,6 +41,11 @@ export default function App() {
       answer:
         "Anyone from BCIT is welcome to join, whether you're a beginner or an experienced hacker. <b>Vibe coders beware, we might ask you a technical question or five</b>.",
     },
+        {
+      question: "How many people can be on a team?",
+      answer:
+        "Max 4 people per team, 5 if one of them is a term 1 CST student (we see you).",
+    },
     {
       question: "Do I need a team?",
       answer:
@@ -96,7 +101,7 @@ export default function App() {
       {/* Workshops Section */}
       <section id="workshops" className="py-16 px-6 md:px-12 bg-muted/30">
         <h2 className="text-4xl font-bold text-center mb-10">Workshops</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {workshops.map((ws, i) => (
             <Card key={i} className="w-full hover:shadow-md transition">
               <Card.Header>
