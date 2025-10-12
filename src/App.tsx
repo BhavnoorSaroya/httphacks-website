@@ -16,9 +16,9 @@ export default function App() {
   const workshops = [
     {
       date: "Oct 27",
-      title: "Figma & Design",
+      title: "Beginners Bootcamp",
       description:
-        "Prototyping 101, why it's important, and how to use Figma to your advantage.",
+        "Learn to design, build, and deploy a project in a matter of hours.",
     },
     {
       date: "Oct 29",
@@ -32,12 +32,7 @@ export default function App() {
       description:
         "Learn the basics of ReactJS, THE frontend framework, using typescript and other tools that all the cool kids use.",
     },
-    {
-      date: "Nov 5",
-      title: "Beginners Bootcamp",
-      description:
-        "Learn to design, build, and deploy a project in a matter of hours.",
-    },
+
   ];
 
   const faqs = [
