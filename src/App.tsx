@@ -15,19 +15,19 @@ export default function App() {
   let navigate = useNavigate();
   const workshops = [
     {
-      date: "Oct 27",
+      date: "Oct 27 - SW03 1710",
       title: "Beginners Bootcamp",
       description:
         "Learn to design, build, and deploy a project in a matter of hours.",
     },
     {
-      date: "Oct 29",
+      date: "Oct 29 - SW03 1710",
       title: "Surprise Workshop",
       description:
         "A special guest speaker will be joining us to share their insights and expertise.",
     },
     {
-      date: "Nov 3",
+      date: "Nov 3 - SW03 1750",
       title: "Intro to ReactJS",
       description:
         "Learn the basics of ReactJS, THE frontend framework, using typescript and other tools that all the cool kids use.",
