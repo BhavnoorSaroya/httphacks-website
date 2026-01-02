@@ -168,7 +168,7 @@ export default function App() {
         <Text className="text-muted-foreground text-center">
           <span className="text-sm">&copy; 2025 BCIT Computing Club</span>
           <br />
-          <span className="text-xs">made with ❤️ by <a className="underline" href="https://saroya.dev">saroya.dev</a> </span>
+          <span className="text-xs">made by <a className="underline" href="https://saroya.dev">human</a> </span>
         </Text>
       </footer>
     </div>
