@@ -1,6 +1,6 @@
-# fly.toml app configuration file generated for c4a-reviews on 2025-10-08T16:23:23-07:00
+# fly.toml app configuration file generated for httphacks on 2026-09-30T13:11:35Z
 #
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+# See https://docs.fly.io/reference/configuration for information about how to use this file.
 #
 
 app = 'httphacks'
@@ -9,9 +9,9 @@ primary_region = 'ord'
 [build]
 
 [http_service]
-  internal_port = 80
+  internal_port = 4000
   force_https = true
-  auto_stop_machines = 'suspend'
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
@@ -20,3 +20,6 @@ primary_region = 'ord'
   memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
+
+[deploy]
+  release_command = '/app/bin/migrate'
